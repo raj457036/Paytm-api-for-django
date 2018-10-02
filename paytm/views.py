@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404
 from django.views.generic import TemplateView
 from django.http import JsonResponse, HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth import settings
@@ -25,7 +26,7 @@ class TestPaytm(TemplateView):
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class PaytmRequest(TemplateView):
+class PaytmRequest(LoginRequiredMixin, TemplateView):
     template_name = 'paytm/request.html'
 
     def get_payment_data(self):
@@ -60,7 +61,7 @@ class PaytmRequest(TemplateView):
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class PaytmResponse(TemplateView):
+class PaytmResponse(LoginRequiredMixin, TemplateView):
 
     template_name = 'paytm/response.html'
 
@@ -84,7 +85,7 @@ class PaytmResponse(TemplateView):
     def post(self, request, *args, **kwargs):
         return super().get(request, *args, **kwargs)
 
-
+@login_required
 def paytm_transection_status(request):
     if request.method == 'POST':
         order = get_object_or_404(PaytmDataBase, order_id=request.POST.get('ORDER_ID'))
