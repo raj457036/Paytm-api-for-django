@@ -87,7 +87,16 @@ urlpatterns = [
 - All the response are in json format
 - Apis are checked and highly optimized for performance
 - This package also include **Refund API** But Paytm suggest not to use apis for this use **PAYTM DASHBOARD**
-
+- you will need to install **pycrypto** for paytm to work.  
+    ```sh
+    pip install pycrypto
+    ```
+    if above give errro i included pre-compiled wheel
+    
+    ```sh
+    pip install pycrypto-2.6.1-cp36-cp36m-win_amd64.whl
+    ```
+    this will solve the problem for windows users too.
 
 ### Any problem? raise an issue
 
