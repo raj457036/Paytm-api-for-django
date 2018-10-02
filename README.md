@@ -59,7 +59,7 @@ urlpatterns = [
 
  - run the server and go to **http://127.0.0.1:8000/paytm/test/**
  
- !(https://lh5.googleusercontent.com/aLLJJWemvZr-KaOtQhz-yxMx55Cvx0f2uCRZJdGpedPwk0BUshaitkPGKd6JifD7gd8FBf3BDYU6YQCoqm93=w1920-h976)
+ ![](https://lh5.googleusercontent.com/aLLJJWemvZr-KaOtQhz-yxMx55Cvx0f2uCRZJdGpedPwk0BUshaitkPGKd6JifD7gd8FBf3BDYU6YQCoqm93=w1920-h976)
  
  - Fill the details and test your api
  
