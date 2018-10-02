@@ -58,7 +58,7 @@ step 4: Setup complete and you are good to go
 ### Test your api
 
  - run the server and go to **http://127.0.0.1:8000/paytm/test/**
- ![alt text](https://drive.google.com/file/d/10fX_hlb5PDQTXrC0aPeNRWi32IGy_Kz9/view?usp=sharing)
+ ![alt text](https://lh3.googleusercontent.com/ZJIbxRyVaXVzoyDFGDHi1zrwt84YuOWpK8gGe69q6DC21bgf1lXw_apCGbmT4L4_WC8n7Q5nsJiWYQO02X4p=w1920-h976)
  - fill the details and test your api
  
 #Any problem? raise an issue
