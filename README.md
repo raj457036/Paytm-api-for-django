@@ -41,7 +41,7 @@ PAYTM_GATEWAY_SETTINGS = {
     'CHANNEL_ID':'WAP', #WEB for websites
     'CALLBACK_URL':f'http://{HOSTNAME}/paytm/payment_response/', } # https:// if you are on production server
 ```
-**Step 3** : Replace "XXXXX..." above with respective **merchant key** and **MID**
+**Step 3** : Run **migrations and migrate** after that Replace "XXXXX..." above with respective **merchant key** and **MID**
 
 **Step 4** : open urls.py and add
 ```python
