@@ -39,7 +39,7 @@ PAYTM_GATEWAY_SETTINGS = {
     'INDUSTRY_TYPE_ID':'Retail',
     'WEBSITE':'APPSTAGING', # WEBSTAGING for websites -->> change this with production variables
     'CHANNEL_ID':'WAP', #WEB for websites
-    'CALLBACK_URL':f'http://{HOSTNAME}/paytm/payment_response/',
+    'CALLBACK_URL':f'http://{HOSTNAME}/paytm/payment_response/', }
 ```
 **Step 3** : Replace "XXXXX..." above with respective **merchant key** and **MID**
 
