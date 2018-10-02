@@ -1,5 +1,5 @@
 # Paytm-api-for-django
-High performance with just plug and play feature. just put the app, tweak some settings and you are ready to go. good luck.
+High performance Paytm Gateway api for Django. Just plug and play app. good luck.
 
 ## Features
 
