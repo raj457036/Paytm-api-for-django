@@ -1,2 +1,3 @@
 /venv
 /paytm_gateway_django
+db.sqlite3
