@@ -1,0 +1,10 @@
+<form action="{{ paytm_url }}" method="post" name="____payform" hidden>
+{% csrf_token %}
+{% for key, value in paytm_req_data.items %}
+    {{ key }}<input type="text" name="{{ key }}" value="{{ value }}">
+{% endfor %}
+<button type="submit">checkout</button>
+</form>
+<script>
+    document.____payform.submit();
+</script>

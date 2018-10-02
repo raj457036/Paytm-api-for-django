@@ -1,0 +1,27 @@
+<h5>Checkout Here</h5>
+<form action="/paytm/" method="post">
+    {% csrf_token %}
+<input type="text" name="ORDER_ID" placeholder="ORDER_ID">
+<input type="number" name="TXN_AMOUNT" placeholder="TXN_AMOUNT" value="10">
+<input type="text" name="CUST_ID" placeholder="CUST_ID" value="rassdf@gmail.com">
+<button type="submit">Submit</button>
+</form>
+
+<br><br>
+
+
+<h5>Check transection status</h5>
+<form action="/paytm/status/" method="post">
+{% csrf_token %}
+<input type="text" name="ORDER_ID" placeholder="ORDER ID">
+<button type="submit">check</button>
+</form>
+
+<!-- <br><br>
+
+<form action="/paytm/refund_request/" method="post">
+{% csrf_token %}
+<input type="text" name="ORDER_ID" placeholder="ORDER ID">
+<input type="number" name='AMOUNT' placeholder="AMOUNT" >
+<button type="submit">check</button>
+</form> -->
