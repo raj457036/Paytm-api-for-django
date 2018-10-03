@@ -40,6 +40,8 @@ PAYTM_GATEWAY_SETTINGS = {
     'WEBSITE':'APPSTAGING', # WEBSTAGING for websites -->> change this with production variables
     'CHANNEL_ID':'WAP', #WEB for websites
     'CALLBACK_URL':f'http://{HOSTNAME}/paytm/payment_response/', } # https:// if you are on production server
+
+PAYTM_SAVE_SUCCESS_TRANSECTIONS_ONLY = True  # if this is true paytm will save only successful transection else it willsave all transections
 ```
 **Step 3** : Run **migrations and migrate** after that Replace "XXXXX..." above with respective **merchant key** and **MID**
 
