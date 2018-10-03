@@ -61,9 +61,15 @@ class PaytmRequest(LoginRequiredMixin, TemplateView):
 
 
 @method_decorator(csrf_exempt, name='dispatch')
-class PaytmResponse(LoginRequiredMixin, TemplateView):
+class PaytmResponse(TemplateView):
 
     template_name = 'paytm/response.html'
+
+    def save_transection(self, response_data):
+        PaytmDataBase.objects.update_or_create(order_id=response_data.get('ORDERID'), 
+                                amount=response_data.get('TXNAMOUNT'),
+                                checksumhash=response_data.get('CHECKSUMHASH'),
+                                txn_id=response_data.get('TXNID'))
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -71,10 +77,11 @@ class PaytmResponse(LoginRequiredMixin, TemplateView):
         for key, value in self.request.POST.items():
             response_data.update({key:value})
 
-        PaytmDataBase.objects.update_or_create(order_id=response_data['ORDERID'], 
-                                amount=response_data['TXNAMOUNT'],
-                                checksumhash=response_data['CHECKSUMHASH'],
-                                txn_id=response_data['TXNID'])
+        if settings.PAYTM_SAVE_SUCCESS_TRANSECTIONS_ONLY:
+            if response_data.get('RESPCODE') == '01':
+                self.save_transection(response_data)
+        else:
+            self.save_transection(response_data)
 
         verified = verify_checksum(response_data, settings.PAYTM_MERCHANT_KEY, response_data['CHECKSUMHASH'])
         response_data.update({'checksum verified': verified })
