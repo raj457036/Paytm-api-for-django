@@ -93,7 +93,7 @@ urlpatterns = [
     ```sh
     pip install pycrypto
     ```
-    if above give errro i included pre-compiled wheel
+    if above give error, i included pre-compiled wheel file
     
     ```sh
     pip install pycrypto-2.6.1-cp36-cp36m-win_amd64.whl
