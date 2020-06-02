@@ -39,7 +39,7 @@ class PaytmRequest(LoginRequiredMixin, TemplateView):
         req_data.update(dict(map(lambda key:key, paytm_sets.items())))
 
         req_data.update(dict(map(lambda key:key, self.request.POST.items())))
-        req_data.pop('csrfmiddlewaretoken')
+        req_data.pop('csrfmiddlewaretoken', None)
 
         return req_data
 
