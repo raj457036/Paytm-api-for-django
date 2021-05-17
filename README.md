@@ -1,8 +1,6 @@
 # Paytm-api-for-django
 High performance Paytm Gateway api for Django. Just plug and play app. good luck.
 
-## Features
-
 ### Requirements
 Python 3+
 Django 2+
